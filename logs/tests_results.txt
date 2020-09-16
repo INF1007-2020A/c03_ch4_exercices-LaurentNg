@@ -2,7 +2,7 @@ test_get_nb_char (__main__.TestExercice) ... FAIL
 test_get_nb_words (__main__.TestExercice) ... ERROR
 test_pair (__main__.TestExercice) ... ok
 test_remove_third_char (__main__.TestExercice) ... ok
-test_replace_char (__main__.TestExercice) ... FAIL
+test_replace_char (__main__.TestExercice) ... ERROR
 
 ======================================================================
 ERROR: test_get_nb_words (__main__.TestExercice)
@@ -13,6 +13,18 @@ Traceback (most recent call last):
   File "test_exercice.py", line 75, in <listcomp>
     output = [exercice.get_nb_words(v[0], v[1]) for v in values]
 TypeError: get_nb_words() takes 1 positional argument but 2 were given
+
+======================================================================
+ERROR: test_replace_char (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 43, in test_replace_char
+    output = [exercice.replace_char(v[0], v[1], v[2]) for v in values]
+  File "test_exercice.py", line 43, in <listcomp>
+    output = [exercice.replace_char(v[0], v[1], v[2]) for v in values]
+  File "/home/runner/work/c03_ch4_exercices-LaurentNg/c03_ch4_exercices-LaurentNg/exercice.py", line 16, in replace_char
+    old_char_index = string.find[old_char]
+TypeError: 'builtin_function_or_method' object is not subscriptable
 
 ======================================================================
 FAIL: test_get_nb_char (__main__.TestExercice)
@@ -33,22 +45,7 @@ First differing element 0:
 ?  ^  ^
  : Mauvais calcul du nombre d'occurences du caractère
 
-======================================================================
-FAIL: test_replace_char (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 49, in test_replace_char
-    'Erreur dans le remplacement de caractère'
-AssertionError: Lists differ: ['heH jad!', 'aaHaab', '01H34'] != ['hey yad!', 'bbbbbb', 'a1234']
-
-First differing element 0:
-'heH jad!'
-'hey yad!'
-
-- ['heH jad!', 'aaHaab', '01H34']
-+ ['hey yad!', 'bbbbbb', 'a1234'] : Erreur dans le remplacement de caractère
-
 ----------------------------------------------------------------------
 Ran 5 tests in 0.001s
 
-FAILED (failures=2, errors=1)
+FAILED (failures=1, errors=2)
